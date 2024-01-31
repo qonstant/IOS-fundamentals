@@ -10,14 +10,14 @@ print("How to use playgrounds to make writing Swift fun and simple")
 /*:
  Now print your own phrases to the console. Pick one of your favorite songs. Use your knowledge of the `print` function to display the song title and artist.
  */
-
-
+print("redrum")
+print("21 Savage")
 /*:
  Use multiple `print` functions to write out some of the lyrics to the song.
  */
-
-
-
+print("I got the power, poison, pain and joy inside my DNA")
+print("I got hustle though, ambition, flow inside my DNA")
+print("I was born like this, since one like this, immaculate conception")
 /*:
 
  _Copyright © 2021 Apple Inc._

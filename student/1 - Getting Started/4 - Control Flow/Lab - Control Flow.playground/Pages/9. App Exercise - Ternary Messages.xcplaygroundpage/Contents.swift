@@ -5,14 +5,16 @@
 
  The code below should look similar to code you wrote in the Fitness Decisions exercise. The if-else statement is actually unnecessary, and instead you can print either one statement or the other all on one line using the ternary operator. Go ahead and refactor the code below to do just that.
  */
-let stepGoal = 10000
-let steps = 3948
+let stepGoal = 10_000
+let steps = 3_948
 
-if steps < stepGoal / 2 {
-    print("Almost halfway!")
-} else {
-    print("Over halfway!")
-}
+//if steps < stepGoal / 2 {
+//    print("Almost halfway!")
+//} else {
+//    print("Over halfway!")
+//}
+
+print(steps < stepGoal / 2 ? "Almost halfway!" : "Over halfway!")
 /*:
  _Copyright © 2021 Apple Inc._
 
