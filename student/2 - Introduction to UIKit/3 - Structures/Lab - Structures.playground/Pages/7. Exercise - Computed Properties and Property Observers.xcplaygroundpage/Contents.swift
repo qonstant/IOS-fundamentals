@@ -7,6 +7,9 @@ struct Rectangle {
     var width: Int
     var height: Int
     
+    var area: Int {
+            return width * height
+    }
 }
 
 
@@ -16,23 +19,35 @@ struct Rectangle {
  Create an instance of `Height` and then change one of its properties. Print out the other property to ensure that it was adjusted accordingly.
  */
 struct Height {
-    var heightInInches: Double
-    
-    var heightInCentimeters: Double
+    var heightInInches: Double {
+        didSet {
+            if heightInInches != oldValue {
+                heightInCentimeters = heightInInches * 2.54
+            }
+        }
+    }
+    var heightInCentimeters: Double {
+        didSet {
+            if heightInCentimeters != oldValue {
+                heightInInches = heightInCentimeters / 2.54
+            }
+        }
+    }
     
     init(heightInInches: Double) {
         self.heightInInches = heightInInches
-        self.heightInCentimeters = heightInInches*2.54
+        self.heightInCentimeters = heightInInches * 2.54
     }
     
     init(heightInCentimeters: Double) {
         self.heightInCentimeters = heightInCentimeters
-        self.heightInInches = heightInCentimeters/2.54
+        self.heightInInches = heightInCentimeters / 2.54
     }
 }
 
-
-
+var height = Height(heightInCentimeters: 170)
+height.heightInInches = 55
+print(height.heightInCentimeters)
 /*:
 [Previous](@previous)  |  page 7 of 10  |  [Next: App Exercise - Mile Times and Congratulations](@next)
  */
