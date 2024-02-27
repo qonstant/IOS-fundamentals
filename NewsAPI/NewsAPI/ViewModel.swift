@@ -12,25 +12,48 @@ class ViewModel: ObservableObject {
     @Published var news: [News] = []
     
     private var timer: Timer?
+    private var currentFetchingMode: FetchingMode = .topHeadlines
+    
+    enum FetchingMode {
+        case topHeadlines
+        case everything
+    }
     
     init() {
-            // Schedule the fetch function to be called every 5 seconds
-            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
-                self?.fetch()
-            }
+        // Schedule the fetch function to be called every 5 seconds
+        timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+            self?.fetchData()
+        }
 
-            // Make sure the timer is added to the current run loop
-            RunLoop.current.add(timer!, forMode: .common)
+        // Make sure the timer is added to the current run loop
+        RunLoop.current.add(timer!, forMode: .common)
     }
     
     deinit {
-            // Invalidate the timer when the ViewModel is deallocated
-            timer?.invalidate()
+        // Invalidate the timer when the ViewModel is deallocated
+        timer?.invalidate()
     }
     
-    func fetch() {
-        
-        guard let url = URL(string: "\(APIConstants.url)/\(APIConstants.topHeadlines)?sources=\(APIConstants.Sources.bbcNews)&apiKey=\(APIConstants.apiKey)") else {
+    func fetchTopHeadlines() {
+        currentFetchingMode = .topHeadlines
+        fetchData()
+    }
+    
+    func fetchEverything() {
+        currentFetchingMode = .everything
+        fetchData()
+    }
+    
+    private func fetchData() {
+        var endpoint = ""
+        switch currentFetchingMode {
+        case .topHeadlines:
+            endpoint = "\(APIConstants.url)/\(APIConstants.topHeadlines)?sources=\(APIConstants.Sources.bbcNews)&apiKey=\(APIConstants.apiKey)"
+        case .everything:
+            endpoint = "\(APIConstants.url)/\(APIConstants.everything)?sources=\(APIConstants.Sources.bbcNews)&apiKey=\(APIConstants.apiKey)"
+        }
+  
+        guard let url = URL(string: endpoint) else {
             return
         }
         

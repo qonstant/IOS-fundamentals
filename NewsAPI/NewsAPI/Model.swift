@@ -29,6 +29,7 @@ struct News: Hashable, Codable {
     }
 }
 
+// Constans 
 struct APIConstants {
     static let topHeadlines = "top-headlines"
     static let everything = "everything"
@@ -39,5 +40,6 @@ struct APIConstants {
     
     static let url = "https://newsapi.org/v2"
     static let country = "us"
-    static let apiKey = "0ecb97332a424beaa9d51b96757abea1"
+    static let apiKey = "e65ee0938a2a43ebb15923b48faed18d   "
+//    static let apiKey = "e65ee0938a2a43ebb15923b48faed18d"
 }

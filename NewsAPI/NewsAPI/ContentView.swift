@@ -52,27 +52,22 @@ struct ContentView: View {
     @StateObject var viewModel = ViewModel()
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(viewModel.news, id: \.self) { news in
-                    NavigationLink(destination: webView(url: news.url) // Everything hovered with a link
-                        .navigationBarTitle("", displayMode: .inline)) {
-                        HStack (spacing: 15) {
-                            URLImage(urlString: news.urlToImage)
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text(news.title).fontWeight(.heavy)
-                                Text(news.description).lineLimit(3)
-                            }
-                            
-                        }
-                        .padding(3)
-                    }
+        TabView {
+            Archive()
+                .tabItem() {
+                    Image(systemName: "archivebox")
+                    Text("Archive")
                 }
-            }
-            .navigationTitle("BBC News")
-            .onAppear {
-                viewModel.fetch()
-            }
+            TopHeadlinesView()
+                .tabItem() {
+                    Image(systemName: "house")
+                    Text("Top Headlines")
+                }
+            EverythingView()
+                .tabItem() {
+                    Image(systemName: "doc.text.magnifyingglass")
+                    Text("Everything")
+                }
         }
     }
 }
