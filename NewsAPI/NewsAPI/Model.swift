@@ -40,6 +40,5 @@ struct APIConstants {
     
     static let url = "https://newsapi.org/v2"
     static let country = "us"
-    static let apiKey = "e65ee0938a2a43ebb15923b48faed18d   "
-//    static let apiKey = "e65ee0938a2a43ebb15923b48faed18d"
+    static let apiKey = "0ecb97332a424beaa9d51b96757abea1   "
 }
