@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OrderOfEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryy-tB-irc">
+                                <rect key="frame" x="84" y="422" width="253" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Show me the life cycle">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="bRB-NO-vHm" kind="show" id="S3u-p5-dNd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bhX-4g-DA8"/>
+                    <connections>
+                        <segue destination="bRB-NO-vHm" kind="push" id="MxB-6u-J8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="4"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="lkz-vd-QWm">
+            <objects>
+                <viewController id="bRB-NO-vHm" customClass="MiddleViewController" customModule="OrderOfEvents" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SBg-LA-7LL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdq-C9-1QV">
+                                <rect key="frame" x="167" y="405" width="73" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="FCy-tu-PnY" kind="show" id="mb9-tx-hQg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nothing has happened yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CB-BD-wm6">
+                                <rect key="frame" x="103" y="103" width="200.33333333333337" height="20.333333333333329"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c0r-DU-lVW"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c0r-DU-lVW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0CB-BD-wm6" secondAttribute="trailing" id="Adn-Ox-7Ft"/>
+                            <constraint firstItem="0CB-BD-wm6" firstAttribute="top" secondItem="c0r-DU-lVW" secondAttribute="top" id="NHY-D7-sQZ"/>
+                            <constraint firstItem="0CB-BD-wm6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c0r-DU-lVW" secondAttribute="leading" id="p5f-hP-Hi3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="2.circle.fill" catalog="system" selectedImage="2.circle.fill" id="Euo-Ru-j4u"/>
+                    <navigationItem key="navigationItem" id="acA-Tf-HxZ"/>
+                    <connections>
+                        <outlet property="label" destination="0CB-BD-wm6" id="jZK-Hw-c0e"/>
+                        <segue destination="FCy-tu-PnY" kind="modal" id="Ulg-Iy-pGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyJ-HR-Ica" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2478.6259541984732" y="3.5211267605633805"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="53l-Ra-VA5">
+            <objects>
+                <viewController id="FCy-tu-PnY" customClass="LastViewController" customModule="OrderOfEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N49-cz-uWT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go back and see if anything happened." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtn-5E-Hud">
+                                <rect key="frame" x="26" y="94" width="341" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tHr-ar-4sS"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xtn-5E-Hud" firstAttribute="centerX" secondItem="N49-cz-uWT" secondAttribute="centerX" id="clU-Nx-YV5"/>
+                            <constraint firstItem="xtn-5E-Hud" firstAttribute="top" secondItem="tHr-ar-4sS" secondAttribute="top" constant="94" id="ozl-cp-sMD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="3.circle.fill" catalog="system" selectedImage="3.circle.fill" id="tcg-Q2-2qL"/>
+                    <navigationItem key="navigationItem" id="PSB-rh-w0I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWq-7r-VNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231.2977099236641" y="3.5211267605633805"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="eUY-6P-n7Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SFa-J6-Nzt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="1.circle.fill" id="zMP-4r-Uan">
+                        <imageReference key="selectedImage" image="1.circle.fill" catalog="system" renderingMode="original" variableValue="1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HSL-tb-C3V">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kwc-X8-jnI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGZ-lQ-WKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879" y="4"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ulg-Iy-pGQ"/>
+        <segue reference="MxB-6u-J8y"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="1.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="1.circle.fill" width="128" height="128"/>
+        <image name="2.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="3.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
+</document>
